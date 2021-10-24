@@ -15,5 +15,5 @@ FoodAddict을 이용해 보세요!
 
 # 🤩 If you're more curious about FoodAddict?
 
-[FoodAddict WIKI](https://github.com/HTlee1990/FoodAddict/wiki)
+[FoodAddict Wiki](https://github.com/HTlee1990/FoodAddict/wiki)
 
