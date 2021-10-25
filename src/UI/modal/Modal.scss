@@ -19,4 +19,35 @@
     display: flex;
     flex-direction: column;
   }
+
+  .modal__wrapper {
+    position: relative;
+  }
+  .modal__context {
+    width: 400px;
+    z-index: 4;
+    padding: 2rem 1rem;
+    border-radius: 0.2em;
+    background: rgb(23, 23, 23);
+    color: rgb(172, 172, 172);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    position: relative;
+  }
+  .closeButton {
+    cursor: pointer;
+    z-index: 3;
+    position: absolute;
+    top: 0px;
+    left: 100%;
+    margin-left: 0.5em;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    border-radius: 0.2em;
+    transition: all 0.1s ease-in;
+  }
 }

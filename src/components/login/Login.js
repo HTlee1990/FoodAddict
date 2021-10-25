@@ -1,14 +1,31 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import axios from "axios";
-import Modal from "../../UI/Modal";
+import Modal from "../../UI/modal/Modal";
 import "./Login.scss";
+import { Context } from "../../context/ContextProvider";
 
 const ENDPOINT = process.env.REACT_APP_ENDPOINT;
 const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 const Login = () => {
-  const loginHandler = (e) => {
+  const { setLoginHandler, loginModalHandler } = useContext(Context);
+
+  //일반 로그인 핸들러
+  const loginHandler = async (e) => {
     e.preventDefault();
+    const headers = {
+      //   id: enteredId,
+      //   password: enteredPw,
+      "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+    };
+    const res = await axios.post(
+      `${ENDPOINT}/login`,
+      { data: null },
+      { headers: headers, withCredentials: true }
+    );
+    setLoginHandler();
+    loginModalHandler();
   };
+
   //1. 구글 소셜로그인 버튼 클릭 -> 코드 받아오기
   const googleHandler = () => {
     window.location.assign(
