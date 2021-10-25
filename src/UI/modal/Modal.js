@@ -11,6 +11,7 @@ const Modal = (props) => {
     if (modalRef.current === e.target) loginModalHandler();
   };
   const closeButtonHandler = () => {
+    console.log(1);
     loginModalHandler();
   };
   const portalPlace = document.getElementById("overlay");

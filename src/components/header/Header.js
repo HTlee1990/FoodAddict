@@ -1,10 +1,11 @@
 import { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import Login from "../login/Login";
 import "./Header.scss";
 import { Context } from "../../context/ContextProvider";
+
 const Header = () => {
-  const { loginModalOpen, setLoginHandler, loginModalHandler } =
-    useContext(Context);
+  const { loginModalOpen, loginModalHandler } = useContext(Context);
   const [clicked, setClicked] = useState(false);
   const navHandler = () => {
     setClicked((prev) => !prev);
@@ -34,9 +35,11 @@ const Header = () => {
             <li className="nav__item">
               <p className="item__link">menu1</p>
             </li>
-            <li className="nav__item">
-              <p className="item__link">menu2</p>
-            </li>
+            <Link to="/listPage">
+              <li className="nav__item">
+                <p className="item__link">List</p>
+              </li>
+            </Link>
             <li className="nav__item" onClick={testHandler}>
               <p className="item__link">Sign in</p>
             </li>

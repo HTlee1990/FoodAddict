@@ -7,7 +7,7 @@ import { Context } from "../../context/ContextProvider";
 const ENDPOINT = process.env.REACT_APP_ENDPOINT;
 const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 const Login = () => {
-  const { setLoginHandler, loginModalHandler } = useContext(Context);
+  const { loginModalHandler } = useContext(Context);
 
   //일반 로그인 핸들러
   const loginHandler = async (e) => {
@@ -22,27 +22,28 @@ const Login = () => {
       { data: null },
       { headers: headers, withCredentials: true }
     );
-    setLoginHandler();
-    loginModalHandler();
   };
 
   //1. 구글 소셜로그인 버튼 클릭 -> 코드 받아오기
   const googleHandler = () => {
-    window.location.assign(
-      `https://accounts.google.com/o/oauth2/v2/auth?client_id=${GOOGLE_CLIENT_ID}&response_type=code&scope=openid email&redirect_uri=${ENDPOINT}/login`
+    loginModalHandler();
+    window.open(
+      `https://accounts.google.com/o/oauth2/v2/auth?client_id=${GOOGLE_CLIENT_ID}&response_type=code&scope=openid email&redirect_uri=${ENDPOINT}/login`,
+      "windowname1",
+      "width=800, height=600"
     );
   };
 
   //3. 서버callback으로, 코드 보내주기
   const getAT = async (authorizationCode) => {
-    console.log(authorizationCode);
     const res = await axios.post(
       "http://localhost:8080/callback",
       { authorizationCode },
       { withCredentials: true }
     );
-    if (res.status === 200) {
-      window.location.href = "/";
+    if (res) {
+      window.close();
+      localStorage.setItem("loggd-in", true);
     }
   };
 
