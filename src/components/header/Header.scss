@@ -1,0 +1,92 @@
+.header__container {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  min-height: 200px;
+
+  .nav__items__container {
+    position: absolute;
+    right: 0;
+    box-shadow: 0 0 3em rgba(0, 0, 0, 0.15);
+    transform: translateX(100%);
+    transition: transform 300ms cubic-bezier(0.5, 0, 0.5, 1);
+    background: var(--clr-light);
+    &.spreaded {
+      transform: translateX(0%);
+    }
+
+    .nav__lists {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      padding: 3em 6em;
+
+      .nav__item {
+        margin-bottom: 3em;
+        cursor: pointer;
+
+        .item__link {
+          color: var(--clr-dark);
+
+          &:hover {
+            text-decoration: underline;
+            color: var(--clr-primary);
+          }
+        }
+      }
+    }
+
+    .hamburger__container {
+      position: absolute;
+      top: 2em;
+      left: 0;
+      transform: translateX(-100%);
+      background: var(--clr-light);
+      width: 2em;
+      padding: 17px;
+      border-radius: 0.25em 0 0 0.25em;
+      cursor: pointer;
+
+      .hamburger {
+        position: absolute;
+        height: 3px;
+        background: darkgray;
+        transition: transform 250ms ease-in-out;
+
+        &:nth-child(1) {
+          top: 6px;
+          width: 17px;
+          left: 0;
+          transform-origin: top left;
+          &.spreaded {
+            transform: rotate(45deg) translateY(-4px) translateX(2px);
+          }
+        }
+        &:nth-child(2) {
+          width: 34px;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          &.spreaded {
+            transform: rotate(-45deg) translateY(-50%);
+          }
+        }
+        &:nth-child(3) {
+          bottom: 6px;
+          right: 0;
+          width: 17px;
+          transform-origin: bottom right;
+          &.spreaded {
+            transform: rotate(45deg) translateY(7px) translateX(-2px);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+}

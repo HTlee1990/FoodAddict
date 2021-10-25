@@ -1,0 +1,11 @@
+.modal__content {
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  .login__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

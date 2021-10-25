@@ -1,0 +1,22 @@
+.modal__background {
+  background-color: rgba(0, 0, 0, 0.866);
+  color: red;
+  min-height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modal__container {
+    border: red solid 1px;
+    min-width: 30%;
+    min-height: 35%;
+    padding: 3rem 5rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
