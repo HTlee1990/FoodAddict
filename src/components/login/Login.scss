@@ -8,6 +8,18 @@
   }
   .login__header {
     cursor: pointer;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      // border: 1px solid black;
+    }
+    &.selected::before {
+      border: 1px solid var(--clr-primary);
+    }
   }
 }
 
@@ -27,22 +39,23 @@
       label {
         position: absolute;
         left: 0;
-        top: -0.2rem;
+        top: 0;
         cursor: text;
         transition: all 200ms ease-in;
       }
       input {
         background: transparent;
         border: none;
-        border-bottom: 1px black solid;
+        border-bottom: 1px rgb(102, 102, 102) solid;
         position: relative;
+        padding-bottom: 0.4rem;
 
         &:focus ~ .input__label {
           color: var(--clr-primary);
         }
         &:focus ~ .input__label,
         &:not(:placeholder-shown) ~ .input__label {
-          top: -0.8rem;
+          top: -0.9rem;
           left: 0.1rem;
           font-size: var(--text-xs);
         }
@@ -51,9 +64,9 @@
 
     button {
       background: linear-gradient(
-        167deg,
-        rgba(254, 78, 78, 0.9253718130311614) 23%,
-        rgba(251, 177, 169, 1) 100%
+        162deg,
+        rgba(254, 78, 78, 1) 0%,
+        rgba(244, 55, 122, 0.8062776548672567) 100%
       );
       border: none;
       color: white;
@@ -66,14 +79,20 @@
       }
     }
   }
+  .modal__divider {
+    margin: 0 auto;
+  }
 
   .google__btn {
     border: none;
     background: none;
     height: 100%;
+
     img {
       width: 50%;
-      // max-height: 5em;
+      &:hover {
+        filter: brightness(0.9);
+      }
     }
   }
 }
