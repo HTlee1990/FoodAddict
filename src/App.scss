@@ -48,5 +48,6 @@ button:focus {
 }
 
 a {
-  color: var(--clr-primary);
+  color: inherit;
+  text-decoration: none;
 }

@@ -88,5 +88,23 @@
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 769px) {
+  .header__container {
+    .nav__items__container {
+      display: flex;
+      position: relative;
+      transform: translateX(0%);
+      box-shadow: none;
+
+      .nav__lists {
+        flex-direction: row;
+        height: 100%;
+        gap: 2rem;
+      }
+
+      .hamburger__container {
+        display: none;
+      }
+    }
+  }
 }
