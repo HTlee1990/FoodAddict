@@ -6,17 +6,24 @@ import { Context } from "../../context/ContextProvider";
 
 const Header = () => {
   const { loginModalOpen, loginModalHandler } = useContext(Context);
+  const [loginTab, setLoginTab] = useState(true);
   const [clicked, setClicked] = useState(false);
   const navHandler = () => {
     setClicked((prev) => !prev);
   };
-  const testHandler = () => {
+  const signInModalHandler = (n) => {
+    loginTabHadler(n);
     loginModalHandler();
+  };
+  const loginTabHadler = (n) => {
+    setLoginTab(n);
   };
 
   return (
     <>
-      {loginModalOpen && <Login />}
+      {loginModalOpen && (
+        <Login loginTab={loginTab} loginTabHadler={loginTabHadler} />
+      )}
       <div className="header__container">
         <div className="nav__logo">This is Logo</div>
 
@@ -40,10 +47,10 @@ const Header = () => {
                 <p className="item__link">List</p>
               </li>
             </Link>
-            <li className="nav__item" onClick={testHandler}>
+            <li className="nav__item" onClick={() => signInModalHandler(1)}>
               <p className="item__link">Sign in</p>
             </li>
-            <li className="nav__item">
+            <li className="nav__item" onClick={() => signInModalHandler(0)}>
               <p className="item__link">Sign up</p>
             </li>
           </ul>

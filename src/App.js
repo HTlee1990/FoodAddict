@@ -3,7 +3,7 @@ import LandingPage from "./pages/LandingPage";
 import Login from "./components/login/Login";
 import Header from "./components/header/Header";
 import ListPage from "./pages/listPage/ListPage";
-import "./App.css";
+import "./App.scss";
 
 function App() {
   return (

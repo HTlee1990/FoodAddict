@@ -11,7 +11,7 @@
     box-shadow: 0 0 3em rgba(0, 0, 0, 0.15);
     transform: translateX(100%);
     transition: transform 300ms cubic-bezier(0.5, 0, 0.5, 1);
-    background: var(--clr-light);
+    background: white;
     &.spreaded {
       transform: translateX(0%);
     }
@@ -44,7 +44,7 @@
       top: 2em;
       left: 0;
       transform: translateX(-100%);
-      background: var(--clr-light);
+      background: white;
       width: 2em;
       padding: 17px;
       border-radius: 0.25em 0 0 0.25em;
