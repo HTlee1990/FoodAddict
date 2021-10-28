@@ -11,7 +11,6 @@ const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 
 const Login = ({ loginTab, loginTabHadler }) => {
   const { loginModalHandler } = useContext(Context);
-
   //1. 구글 소셜로그인 버튼 클릭 -> 코드 받아오기
   const googleHandler = () => {
     loginModalHandler();
@@ -31,7 +30,8 @@ const Login = ({ loginTab, loginTabHadler }) => {
     );
     if (res) {
       window.close();
-      localStorage.setItem("loggd-in", true);
+      localStorage.setItem("logged-in", true);
+      window.opener.loginHandler();
     }
   };
 

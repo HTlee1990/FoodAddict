@@ -23,6 +23,7 @@ const LoginBody = ({ googleHandler }) => {
         { data: null },
         { headers: headers, withCredentials: true }
       );
+      if (res) localStorage.setItem("logged-in", true);
     } catch (error) {
       console.log(error);
     }

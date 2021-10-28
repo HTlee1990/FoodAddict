@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import Login from "../login/Login";
 import "./Header.scss";
@@ -8,6 +8,7 @@ const Header = () => {
   const { loginModalOpen, loginModalHandler } = useContext(Context);
   const [loginTab, setLoginTab] = useState(true);
   const [clicked, setClicked] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navHandler = () => {
     setClicked((prev) => !prev);
   };
@@ -18,6 +19,18 @@ const Header = () => {
   const loginTabHadler = (n) => {
     setLoginTab(n);
   };
+  const logoutHandler = () => {
+    localStorage.removeItem("logged-in");
+    setIsLoggedIn(false);
+  };
+  window.loginHandler = function () {
+    setIsLoggedIn(localStorage.getItem("logged-in"));
+  };
+
+  const loginTest = localStorage.getItem("logged-in");
+  useEffect(() => {
+    setIsLoggedIn(loginTest);
+  }, [loginTest]);
 
   return (
     <>
@@ -47,9 +60,16 @@ const Header = () => {
                 <p className="item__link">List</p>
               </li>
             </Link>
-            <li className="nav__item" onClick={() => signInModalHandler(1)}>
-              <p className="item__link">Sign in</p>
-            </li>
+            {!isLoggedIn && (
+              <li className="nav__item" onClick={() => signInModalHandler(1)}>
+                <p className="item__link">Sign in</p>
+              </li>
+            )}
+            {isLoggedIn && (
+              <li className="nav__item" onClick={logoutHandler}>
+                <p className="item__link">Logout</p>
+              </li>
+            )}
             <li className="nav__item" onClick={() => signInModalHandler(0)}>
               <p className="item__link">Sign up</p>
             </li>
