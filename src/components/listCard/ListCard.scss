@@ -1,0 +1,21 @@
+.list__card__container {
+  &:hover {
+    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+  }
+}
+
+.card__thumbnail {
+  min-height: 250px;
+  padding: 0 2rem;
+  width: 100%;
+  word-break: break-all;
+}
+
+.card__text__container {
+  width: 100%;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
