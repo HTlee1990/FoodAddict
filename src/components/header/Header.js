@@ -33,12 +33,16 @@ const Header = () => {
   }, [loginTest]);
 
   return (
-    <>
+    <div className="header__big__container">
       {loginModalOpen && (
         <Login loginTab={loginTab} loginTabHadler={loginTabHadler} />
       )}
       <div className="header__container">
-        <div className="nav__logo">This is Logo</div>
+        <Link to="/">
+          <div className="nav__logo">
+            <p>PooK</p>
+          </div>
+        </Link>
 
         <div
           className={
@@ -76,7 +80,7 @@ const Header = () => {
           </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

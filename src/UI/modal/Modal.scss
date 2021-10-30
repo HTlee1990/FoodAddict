@@ -3,7 +3,7 @@
   color: red;
   min-height: 100%;
   width: 100%;
-  z-index: 1;
+  z-index: 10;
   position: absolute;
   top: 0;
   left: 0;
@@ -25,7 +25,7 @@
   }
   .modal__context {
     width: 400px;
-    z-index: 4;
+    z-index: 999;
     padding: 2rem 1rem;
     border-radius: 0.2em;
     background: rgb(255, 255, 255);
@@ -37,7 +37,7 @@
   }
   .closeButton {
     cursor: pointer;
-    z-index: 3;
+    z-index: 999;
     position: absolute;
     top: 0px;
     left: 100%;

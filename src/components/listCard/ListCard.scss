@@ -6,10 +6,11 @@
 }
 
 .card__thumbnail {
-  min-height: 250px;
+  //   min-height: 250px;
   padding: 0 2rem;
   width: 100%;
   word-break: break-all;
+  aspect-ratio: 16 / 9;
 }
 
 .card__text__container {
