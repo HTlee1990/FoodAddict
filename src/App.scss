@@ -1,6 +1,6 @@
 :root {
   --primary: #e26a80;
-  --clr-neutral: #fbb1a9;
+  --neutral: #ffe667;
   --clr-light: #ffe5de;
   --clr-contrast: #86aee1;
   --text-base-size: 1em;
@@ -33,7 +33,9 @@ body {
   font-family: sans-serif;
   background: white;
 }
-
+ul {
+  padding-left: 0;
+}
 li {
   list-style: none;
 }

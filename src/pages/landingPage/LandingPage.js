@@ -1,11 +1,13 @@
-import LandingPageHeader from "../../components/landingPageHeader/LandingPageHeader";
+import TodayPlace from "../../components/landingPage/todayPlace/TodayPlace";
+import TopPlace from "../../components/landingPage/topPlace/TopPlace";
+import LatestReview from "../../components/landingPage/latestReview/LatestReview";
 import "./LandingPage.scss";
 const LandingPage = () => {
   return (
-    <div>
-      <LandingPageHeader />
-      <div> 오늘의 맛집 </div>
-      <div className="today__card__container"></div>
+    <div className="landing__container">
+      <TodayPlace />
+      <TopPlace />
+      <LatestReview />
     </div>
   );
 };
