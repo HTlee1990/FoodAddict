@@ -1,18 +1,23 @@
-// .header__big__container {
-//   position: fixed;
-// }
+.header__big__container {
+  position: fixed;
+  height: 100px;
+  width: 100%;
+  background: white;
+  z-index: 10;
+}
 .header__container {
   display: flex;
   justify-content: space-between;
   position: relative;
   height: 100px;
-  color: white;
+  color: var(--primary);
   z-index: 1;
-  background: linear-gradient(
-    157deg,
-    rgba(226, 106, 128, 1) 0%,
-    rgba(255, 230, 103, 1) 100%
-  );
+  background: transparent;
+  // background: linear-gradient(
+  //   157deg,
+  //   rgba(226, 106, 128, 1) 0%,
+  //   rgba(255, 230, 103, 1) 100%
+  // );
   font-size: 1em;
   padding: 0 1em;
 
@@ -21,6 +26,10 @@
     display: flex;
     align-items: center;
     font-size: 1.25em;
+
+    .logo {
+      font-size: 1.5rem;
+    }
   }
 
   .nav__items__container {
@@ -53,7 +62,7 @@
 
           &:hover {
             text-decoration: underline;
-            color: var(--clr-primary);
+            color: var(--primary);
           }
         }
       }
@@ -73,8 +82,8 @@
 
       .hamburger {
         position: absolute;
-        height: 3px;
-        background: white;
+        height: 4px;
+        background: var(--primary);
         transition: transform 250ms ease-in-out;
 
         &:nth-child(1) {
@@ -117,7 +126,7 @@
       transform: translateX(0%);
       box-shadow: none;
       background: transparent;
-      color: white;
+      color: var(--primary);
 
       .nav__lists {
         flex-direction: row;

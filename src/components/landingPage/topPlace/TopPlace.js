@@ -1,4 +1,5 @@
 import "./TopPlace.scss";
+import TopPlaceCard from "./TopPlaceCard";
 
 const TopPlace = () => {
   return (
@@ -16,13 +17,22 @@ const TopPlace = () => {
         <li className="hashtag">#간단한한끼</li>
         <li className="hashtag">#비주얼맛집</li>
         <li className="hashtag">#사진명당</li>
-        {/* <li className="hashtag">#편안한</li> */}
         <li className="hashtag">#음악이흐르는</li>
         <li className="hashtag">#술이술술술</li>
         <li className="hashtag">#특별한날</li>
       </ul>
 
-      <div className="top__place__container"></div>
+      <div className="top__place__container">
+        <header>Top Places</header>
+        <div className="top__place__card__container">
+          <TopPlaceCard />
+          <TopPlaceCard />
+          <TopPlaceCard />
+          <TopPlaceCard />
+          <TopPlaceCard />
+          <TopPlaceCard />
+        </div>
+      </div>
     </div>
   );
 };

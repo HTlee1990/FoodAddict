@@ -5,7 +5,7 @@ const TodayPlace = () => {
     <div class="landing__first__container">
       <LandingPageHeader />
       <div className="today__container">
-        <div className="today__title"> 오늘의 맛집</div>
+        <span className="today__title"> 오늘의 맛집</span>
       </div>
       <div className="today__card__container">
         <div className="today__card">

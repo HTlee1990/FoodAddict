@@ -40,7 +40,7 @@ const Header = () => {
       <div className="header__container">
         <Link to="/">
           <div className="nav__logo">
-            <p>PooK</p>
+            <p className="logo">PooK</p>
           </div>
         </Link>
 
