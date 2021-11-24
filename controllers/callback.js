@@ -29,6 +29,7 @@ module.exports = async (req, res) => {
         scope: "https://www.googleapis.com/auth/userinfo.email",
       },
     });
+    console.log(11, userData);
     res
       .cookie("accessToken", accessToken)
       .status(200)
